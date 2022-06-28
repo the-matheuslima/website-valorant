@@ -1,0 +1,36 @@
+@use "../../scss/" as *;
+
+.navbar {
+   @include flex(center, space-between);
+   position: absolute;
+   backdrop-filter: blur(20px);
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 99;
+   // background-color: $bg2-color;
+   transition: height 0.3s ease, background-color 0.3s ease;
+
+   &__logo {
+      width: 50px;
+      height: 50px;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__items {
+      display: inline-flex;
+
+      & * ~ * {
+         margin-left: 1rem;
+      }
+   }
+
+   &__item {
+      text-transform: uppercase;
+   }
+}

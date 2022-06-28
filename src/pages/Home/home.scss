@@ -1,0 +1,136 @@
+@use "../../scss/" as *;
+
+.header {
+   @include flex(center, space-between);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   width: 100%;
+   height: 100vh;
+   color: $txt-color;
+
+   &_game {
+      h2 {
+         font-size: 2rem;
+         font-weight: bolder;
+      }
+   }
+
+   &_valorant {
+      position: absolute;
+      right: 0;
+
+      h1 {
+         font-size: 12rem;
+         font-weight: 600;
+         letter-spacing: 1rem;
+      }
+   }
+
+   &_agent {
+      height: 600px;
+      z-index: 10;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}
+
+.home {
+   &_section {
+      @include flex(center, center);
+      position: relative;
+
+      &_center {
+         z-index: 100;
+         width: 73%;
+      }
+
+      &_border {
+         border: 5px solid $main-color;
+      }
+   }
+
+   &__agents {
+      @include flex(center, space-between);
+      color: $txt-color;
+
+      &__imgs {
+         @include flex(center, center);
+
+         height: 800px;
+         flex: 2;
+         img {
+            width: 100%;
+            width: 389px;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+
+      &__info {
+         flex: 1;
+
+         &__about {
+            text-transform: uppercase;
+            font-size: 6rem;
+         }
+
+         &__desc {
+            width: 80%;
+         }
+      }
+   }
+
+   &__sprays {
+      padding: 3rem;
+      border-radius: 10px;
+      background-image: linear-gradient(#4535, #7522);
+   }
+
+   &__category {
+      &-flex {
+         @include flex(center, space-between);
+      }
+
+      &-title {
+         color: $txt-color;
+         text-transform: uppercase;
+      }
+   }
+}
+
+.bg_change {
+   background-color: $second-color;
+   position: relative;
+
+   .agent__bg {
+      position: absolute;
+      height: 800px;
+      right: 0;
+      bottom: 0;
+
+      img {
+         width: 100%;
+         height: 100%;
+         width: 358px;
+         object-fit: cover;
+      }
+   }
+}
+
+.width__large {
+   width: 100%;
+}
+
+.grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   align-items: center;
+   justify-items: center;
+   gap: 15px;
+}
